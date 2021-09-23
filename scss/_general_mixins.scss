@@ -13,3 +13,7 @@
 .center-h{
     @include flexCenter(row);
 }
+
+.d-none {
+    display: none;
+}
