@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+.center, .title {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.center-h {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+body {
+  background-image: url("../img/background-image.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url("../img/small-background-image.png");
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0.5rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.5;
+}
+
+p {
+  line-height: 1.8rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container-fluid, .container {
+  padding: 20px 15px 20px 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  max-width: 1140px;
+}
+
+.title {
+  text-align: center;
+}
+
+.card {
+  background-color: #fffefe;
+  padding: 2.3rem 3.5rem;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 15px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+@media only screen and (max-width: 767px) {
+  .card {
+    padding: 1rem 2rem;
+  }
+}
+
+.main-form input:not(input[type=radio]) {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 0.375rem 0.75rem;
+  margin: 1rem 0;
+  background: #f3f3f3;
+  border: none;
+  color: #495057;
+  border-radius: 10px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+.main-form input:not(input[type=radio]):focus {
+  outline: none;
+}
+.main-form label {
+  margin-top: 1rem;
+  display: inline-block;
+}
+.main-form p {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: #6b6e70;
+}
+
+.obligatorio {
+  color: red;
+}
+
+.next-button, .submit-button, .results-button, .prev-button {
+  padding: 0.8rem 1.5rem;
+  display: inline-block;
+  background-color: #669cd1;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.submit-button, .results-button {
+  background-color: #E294BC;
+}
+
+th {
+  padding: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

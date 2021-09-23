@@ -1,0 +1,66 @@
+.card {
+    background-color: #fffefe;
+    padding: 2.3rem 3.5rem;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 15px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+    @include responsiveMobile() {
+        padding: 1rem 2rem;
+    }
+}
+
+.main-form {
+    input:not(input[type=radio]) {
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+        padding: 0.375rem 0.75rem;
+        margin: 1rem 0;
+        background: #f3f3f3;
+        border: none;
+        color: #495057;
+        border-radius: 10px;
+        line-height: 1.5;
+        font-size: 1rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    label {
+        margin-top: 1rem;
+        display: inline-block;
+    }
+
+    p {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        color: #6b6e70;
+    }
+}
+
+.obligatorio{
+    color:red;
+}
+
+.next-button, .prev-button {
+    padding: 0.8rem 1.5rem;
+    display: inline-block;
+    background-color: #669cd1;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.submit-button {
+    @extend .next-button;
+    background-color: #E294BC;
+}
+.results-button{
+    @extend .submit-button;
+}

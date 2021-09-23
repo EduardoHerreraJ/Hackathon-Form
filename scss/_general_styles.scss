@@ -1,0 +1,46 @@
+body {
+    background-image: url('../img/background-image.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    @include responsiveMobile() {
+        background-image: url('../img/small-background-image.png');
+    }
+}
+
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+    margin-top: 0.5rem;
+    margin-bottom: 1.3rem;
+    line-height: 1.5;
+}
+
+p {
+    line-height: 1.8rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-fluid, .container {
+    padding: 20px 15px 20px 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.title {
+    @extend .center;
+    text-align: center;
+}
