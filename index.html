@@ -45,8 +45,9 @@
                 <p class="obligatorio">*Obligatorio</p>
 
                 <form class="main-form"> 
-                    <label for="email">Dirección de mail*</label>
-                    <input type="email" name="email" id="email" placeholder="example@mail.com" required>
+                    <label for="email">Dirección de mail *</label>
+                    <input type="email" name="email" id="email" placeholder="example@mail.com" data-required="true">
+                    <p class="d-none" id="error-email"></p>
                     
                     <a href="form-1.html" class="next-button">Siguiente</a>
                 </form>
@@ -54,5 +55,11 @@
         </div>
     </div>
     
+    <!--  Scripts  -->
+    <script src="js/general.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/back-index.js"></script>
+    <!--  Scripts  -->
 </body>
 </html>

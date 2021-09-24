@@ -17,41 +17,48 @@
             <div class="card">        
                 <h2>Queremos conocerte</h2>
                 <form class="main-form"> 
-                    <label for="email">¿Cuál es tu nombre?</label>
+                    <label for="fullname">¿Cuál es tu nombre? *</label>
                     <p>Tus nombres, apellido paterno y materno</p>
-                    <input type="text" name="email" id="email" placeholder="Nombre completo">
+                    <input type="text" name="fullname" id="fullname" placeholder="Nombre completo" data-required="true">
+                    <p class="d-none" id="error-fullname"></p>
     
-                    <label for="age">¿Qué edad tienes? (debes ser mayor de edad)</label>
-                    <input type="text" name="age" id="age" placeholder="ej. 18">
+                    <label for="age">¿Qué edad tienes? (debes ser mayor de edad) *</label>
+                    <input type="text" name="age" id="age" placeholder="ej. 18" data-required="true">
+                    <p class="d-none" id="error-age"></p>
     
-                    <label for="curp">¿Cuál es tu CURP?</label>
-                    <input type="text" name="curp" id="curp" placeholder="ej. ABCDE001015FGHIJK7">
+                    <label for="curp">¿Cuál es tu CURP? *</label>
+                    <input type="text" name="curp" id="curp" placeholder="ej. ABCDE001015FGHIJK7" data-required="true">
+                    <p class="d-none" id="error-curp"></p>
     
-                    <label for="residence">¿Donde resides actualmente?</label>
-                    <p>Indicanos tu Región y ciudad</p>
-                    <input type="text" name="residence" id="residence" placeholder="Región y Ciudad">
+                    <label for="residence">¿Dónde resides actualmente? *</label>
+                    <p>Indicanos tu Región y Ciudad</p>
+                    <input type="text" name="residence" id="residence" placeholder="Región y Ciudad" data-required="true">
+                    <p class="d-none" id="error-residence"></p>
     
-                    <label for="occupation">¿A qué te dedicas?</label>
+                    <div id="occupation">
+                        <label for="occupation">¿A qué te dedicas? *</label>
 
-                    <div>
-                        <input type="radio" name="occupation" id="college">
-                        <label for="college">Soy universitario/a</label>
+                        <div>
+                            <input type="radio" name="occupation" id="college" value="Soy universitario/a">
+                            <label for="college">Soy universitario/a</label>
+                        </div>
+                        
+                        <div>
+                            <input type="radio" name="occupation" id="comunity" value="Soy lider en mi comunidad">
+                            <label for="community">Soy lider en mi comunidad</label>
+                        </div>
+                        
+                        <div>
+                            <input type="radio" name="occupation" id="entrepreneur" value="Soy emprendedor">
+                            <label for="enterpreneur">Soy emprendedor</label>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <input type="radio" name="occupation" id="other" value="Otro">
+                            <label for="other">Otro</label>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <input type="radio" name="occupation" id="comunity">
-                        <label for="community">Soy lider en mi comunidad</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" name="occupation" id="entrepreneur">
-                        <label for="enterpreneur">Soy emprendedor</label>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <input type="radio" name="occupation" id="other">
-                        <label for="other">otro</label>
-                    </div>
+                    <p class="d-none" id="error-occupation"></p>
                     
                     <a href="index.html" class="prev-button">Regresar</a>
                     <a href="form-2.html" class="next-button">Siguiente</a>
@@ -60,5 +67,12 @@
             </div>
         </div>
     </div>
+
+    <!--  Scripts  -->
+    <script src="js/general.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/back-form-1.js"></script>
+    <!--  Scripts  -->
 </body>
 </html>
