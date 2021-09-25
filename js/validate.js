@@ -120,16 +120,16 @@ let getInputValidation = (element) => {
  * Función para detectar errores antes de enviar el formulario
  * @returns {Boolean} 'true' si no hay errores en el formulario. 'false' si existen errores
  */
-/*let validate = () => {
-  let errors = document.getElementsByClassName("validate")
+let validate = () => {
+  let errors = document.querySelectorAll("[data-validated='false']")
 
   if (errors.length > 0) {
     for (let i=0; i<errors.length; i++) {
-      showErrorMessage(errors.item(i).id)
+      showErrorMessage("error-" + errors.item(i).id)
     }
 
     return false
   }else {
     return true
   }
-}*/
+}

@@ -57,3 +57,12 @@ let isRequired = (element) => {
 
   return (required != null ? (required.toLowerCase() === "true") : false)
 }
+
+
+/**
+ * Función para ir a la URL indicada
+ * @param {String} URL 
+ */
+let goTo = (URL) => {
+  window.location.href = URL
+}

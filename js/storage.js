@@ -8,14 +8,34 @@ const sS = sessionStorage
  * @returns {Promise} Regresa una Promise con el valor de la entrada si se guarda correctamente en Storage
  */
 let saveInputText = (element) => {
-  if (getInputValidation(element))
-    sS.setItem(element.id, element.value)
+  sS.setItem(element.id, element.value)
 
   return new Promise((resolve, reject) => {
     let value = sS.getItem(element.id)
 
     if (value != null)
-      resolve(value)
+      resolve((element.id+" guardado\n"))
+    else
+      reject()
+  })
+}
+
+
+/**
+ * Función para guardar el valor temporal de una entrada de tipo texto en Storage
+ * @param {HTMLElement} element - Elemento que se desea guardar
+ * @returns {Promise} Regresa una Promise con el valor de la entrada si se guarda correctamente en Storage
+ */
+let tempInputText = (element) => {
+  let tempKey = "temp-"+element.id
+
+  sS.setItem(tempKey, element.value)
+
+  return new Promise((resolve, reject) => {
+    let value = sS.getItem(tempKey)
+
+    if (value != null)
+      resolve((tempKey+"\n"))
     else
       reject()
   })
@@ -25,13 +45,25 @@ let saveInputText = (element) => {
 /**
  * Función para rellenar el valor de una entrada de tipo texto si se encuentra en Storage
  * @param {HTMLElement} element - Elemento del que se desea obtener su valor
+ * @param {Function} validation - Función de validación para el elemento dado
  */
-let loadInputText = (element) => {
-  let value = sS.getItem(element.id), errorId = "error-" + element.id
+let loadInputText = (element, validation) => {
+  let tempKey = "temp-"+element.id, tempValue = sS.getItem(tempKey), value = sS.getItem(element.id), errorId = "error-" + element.id
 
-  if (value != null) {
+  if (value != null && tempValue == null) {
     element.value = value
     setInputValidation(element, true)
+  }else if (tempValue != null) {
+    if (value == null || value != tempValue) {element.value = tempValue} else {element.value = value}
+    
+    if (tempValue.length > 0) {
+      validation()
+    }else {
+      setInputValidation(element, false)
+      setErrorMessage(errorId, "Completa este campo")
+    }
+
+    sS.removeItem(tempKey)
   }else {
     if (isRequired(element)) {
       setInputValidation(element, false)
@@ -83,4 +115,13 @@ let loadInputRadio = (elements) => {
     setInputValidation(document.getElementById(name), false)
     setErrorMessage(errorId, "Selecciona una opción")
   }
+}
+
+
+/**
+ * Función para obtener la respuesta de una pregunta
+ * @param {HTMLElement} element - Elemento donde se mostrará la respuesta. El id debe se igual a la llave del Storage
+ */
+let loadAnswer = (element) => {
+  element.innerHTML = sS.getItem(element.id)
 }
