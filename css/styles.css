@@ -104,11 +104,18 @@ p {
   margin-top: 1rem;
   display: inline-block;
 }
-.main-form p {
+.main-form p:not(.warning-info) {
   margin-top: 1rem;
   margin-bottom: 0;
   font-size: 0.9rem;
   color: #6b6e70;
+}
+
+.warning-info {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: #fb3b3b;
+  margin-top: -1rem;
 }
 
 .obligatorio {

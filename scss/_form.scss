@@ -33,12 +33,19 @@
         display: inline-block;
     }
 
-    p {
+    p:not(.warning-info) {
         margin-top: 1rem;
         margin-bottom: 0;
         font-size: 0.9rem;
         color: #6b6e70;
     }
+}
+
+.warning-info {
+    margin-top: 0;
+    font-size: 0.8rem;
+    color: rgb(251, 59, 59);
+    margin-top: -1rem;
 }
 
 .obligatorio{
