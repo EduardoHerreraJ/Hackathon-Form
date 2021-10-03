@@ -41,6 +41,14 @@
     }
 }
 
+#occupation {
+    label {
+        margin-top: 0px;
+        width: 100%;
+        padding: 10px;
+    }
+}
+
 .warning-info {
     margin-top: 0;
     font-size: 0.8rem;
@@ -62,6 +70,7 @@
     color: #ffffff;
     text-decoration: none;
     vertical-align: middle;
+    cursor: pointer;
 }
 
 .submit-button {
